@@ -1,0 +1,921 @@
+{
+  "info": {
+    "name": "Cidade em Dia - API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "0 - API no ar",
+      "item": [
+        {
+          "name": "GET raiz",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "1 - Categorias",
+      "item": [
+        {
+          "name": "Listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categorias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cadastrar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Sinalização\",\n  \"descricao\": \"Placas e faixas apagadas ou danificadas\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Atualizar 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Buraco\",\n  \"descricao\": \"Buracos, afundamentos e asfalto danificado\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Remover (troque o id pela criada)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "7"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2 - Moradores",
+      "item": [
+        {
+          "name": "Listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/moradores",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "moradores"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/moradores/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "moradores",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cadastrar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/moradores",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "moradores"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Lucas Oliveira\",\n  \"email\": \"lucas.oliveira@email.com\",\n  \"cpf\": \"99351819019\",\n  \"telefone\": \"11932109876\",\n  \"subprefeitura\": \"Sé\",\n  \"senha\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Login (200)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/moradores/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "moradores",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"maria.souza@email.com\",\n  \"senha\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Atualizar 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/moradores/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "moradores",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Maria Souza\",\n  \"email\": \"maria.souza@email.com\",\n  \"cpf\": \"52601815906\",\n  \"telefone\": \"11987654321\",\n  \"subprefeitura\": \"Vila Mariana\",\n  \"senha\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Remover (troque o id pelo criado)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/moradores/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "moradores",
+                "6"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3 - Ocorrências",
+      "item": [
+        {
+          "name": "Listar (mais confirmadas primeiro)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar abertas de Buraco",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias?status=REGISTRADA&categoriaId=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "REGISTRADA"
+                },
+                {
+                  "key": "categoriaId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cadastrar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoriaId\": 1,\n  \"moradorId\": 3,\n  \"titulo\": \"Buraco na frente da padaria\",\n  \"descricao\": \"Buraco fundo que enche de água quando chove.\",\n  \"latitude\": -23.5935,\n  \"longitude\": -46.6402,\n  \"endereco\": \"Rua Vergueiro, 3000\",\n  \"urlFoto\": \"https://exemplo.com/foto.jpg\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Atualizar (troque o id pela criada)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "6"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoriaId\": 1,\n  \"moradorId\": 3,\n  \"titulo\": \"Buraco na frente da padaria\",\n  \"descricao\": \"Buraco fundo, já tem cone de sinalização.\",\n  \"latitude\": -23.5935,\n  \"longitude\": -46.6402,\n  \"endereco\": \"Rua Vergueiro, 3000\",\n  \"urlFoto\": \"https://exemplo.com/foto.jpg\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Remover (troque o id pela criada)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "6"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4 - Linha do tempo (1:N)",
+      "item": [
+        {
+          "name": "Listar atualizações da ocorrência 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/1/atualizacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "1",
+                "atualizacoes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Registrar EM_EXECUCAO na ocorrência 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/1/atualizacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "1",
+                "atualizacoes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"EM_EXECUCAO\",\n  \"descricao\": \"Equipe de asfalto enviada ao local.\",\n  \"responsavel\": \"Subprefeitura Vila Mariana\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Buscar atualização 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/atualizacoes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "atualizacoes",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Editar texto da atualização 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/atualizacoes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "atualizacoes",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"EM_ANALISE\",\n  \"descricao\": \"Vistoria agendada para quinta-feira.\",\n  \"responsavel\": \"Subprefeitura Vila Mariana\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Remover a última (troque o id)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/atualizacoes/7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "atualizacoes",
+                "7"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5 - Confirmações (1:N)",
+      "item": [
+        {
+          "name": "Listar confirmações da ocorrência 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/1/confirmacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "1",
+                "confirmacoes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Confirmar ocorrência 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/3/confirmacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "3",
+                "confirmacoes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"moradorId\": 1,\n  \"comentario\": \"Continua escuro à noite.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Buscar confirmação 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/confirmacoes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "confirmacoes",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Editar comentário da confirmação 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/confirmacoes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "confirmacoes",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"moradorId\": 2,\n  \"comentario\": \"Piorou depois da chuva.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Desfazer confirmação (troque o id)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/confirmacoes/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "confirmacoes",
+                "6"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "6 - ERROS para demonstrar",
+      "item": [
+        {
+          "name": "400 - cadastro inválido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/moradores",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "moradores"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"\",\n  \"email\": \"email-invalido\",\n  \"cpf\": \"11111111111\",\n  \"telefone\": \"123\",\n  \"subprefeitura\": \"\",\n  \"senha\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "404 - id que não existe",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "9999"
+              ]
+            }
+          }
+        },
+        {
+          "name": "401 - login com senha errada",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/moradores/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "moradores",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"maria.souza@email.com\",\n  \"senha\": \"errada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "405 - método não suportado",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "409 - ocorrência duplicada (30 m da ocorrência 1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoriaId\": 1,\n  \"moradorId\": 5,\n  \"titulo\": \"Buraco enorme na Domingos\",\n  \"descricao\": \"Buraco grande perto do número 1200.\",\n  \"latitude\": -23.58863,\n  \"longitude\": -46.6341,\n  \"endereco\": \"Rua Domingos de Morais, 1210\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "409 - pular etapa (REGISTRADA -> CONCLUIDA)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/2/atualizacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "2",
+                "atualizacoes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"CONCLUIDA\",\n  \"descricao\": \"Resolvido.\",\n  \"responsavel\": \"Subprefeitura\",\n  \"urlEvidencia\": \"https://exemplo.com/depois.jpg\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "409 - autor confirmando o próprio registro",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/1/confirmacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "1",
+                "confirmacoes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"moradorId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "409 - confirmar duas vezes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ocorrencias/1/confirmacoes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ocorrencias",
+                "1",
+                "confirmacoes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"moradorId\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "409 - remover categoria com ocorrências",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categorias/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categorias",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
