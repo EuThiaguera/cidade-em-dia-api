@@ -18,6 +18,7 @@ Moradores se cadastram, registram problemas urbanos (buracos, alagamentos, ilumi
 ## Links
 
 - API no Render: https://cidade-em-dia-q2dd.onrender.com
+- Vídeo (YouTube, não listado): https://youtu.be/Q5a3ID0_N2Y
 
 ## Tecnologias
 
