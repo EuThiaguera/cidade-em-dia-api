@@ -3,21 +3,21 @@
 API RESTful do **Cidade em Dia**, plataforma de inteligência urbana e participação cidadã
 (Global Solution 2026/2 — CitizenTech — Domain Driven Design Using Java, FIAP).
 
-Moradores registram problemas urbanos (buracos, alagamentos, iluminação...), outros moradores
+Moradores se cadastram, registram problemas urbanos (buracos, alagamentos, iluminação...), outros moradores
 **confirmam** que o problema continua, e a gestão pública registra a **linha do tempo** até a conclusão.
 
 ## Integrantes
 
-| Nome | RM | Turma |
-|------|----|-------|
-| Thiago Andrade | RM_____ | 1TDS |
-| | | |
-| | | |
+| Nome | RM |
+|------|----|
+| Thiago Andrade Silva Piedade | RM569741 |
+| Giovanni Lopez Zavam | RM571403 |
+| Arthur Palacio Alves | RM573441 |
+| Murilo Martins de Campos | RM572674 |
 
 ## Links
 
-- API no Render: `https://SEU-SERVICO.onrender.com`
-- Vídeo (YouTube não listado): `https://youtu.be/...`
+- API no Render: https://cidade-em-dia-q2dd.onrender.com
 
 ## Tecnologias
 
@@ -173,13 +173,14 @@ Resposta 200 com os dados do morador (sem a senha). O front guarda o `id` para r
 
 3. Rode a classe `CidadeEmDiaApplication` ou `./mvnw spring-boot:run`.
 4. Acesse `http://localhost:8080/`.
+5. Para testar as rotas, importe `docs/CidadeEmDia.postman_collection.json` no Insomnia ou no Postman e ajuste a variável `baseUrl`.
 
 ## Deploy (Render)
 
 1. Suba o projeto para um repositório no GitHub.
 2. No Render: *New > Web Service*, escolha o repositório e o ambiente **Docker** (usa o `Dockerfile` multi-stage).
 3. Em *Environment*, cadastre `DB_USER` e `DB_PASSWORD` (os valores **não** vão para o código).
-4. Após o deploy, teste `https://SEU-SERVICO.onrender.com/`.
+4. Após o deploy, teste https://cidade-em-dia-q2dd.onrender.com/ (deve responder `"status": "online"`).
 
 > O plano gratuito do Render "dorme" sem uso. Acesse a URL alguns minutos antes da apresentação.
 
